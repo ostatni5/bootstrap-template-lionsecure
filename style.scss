@@ -1,0 +1,214 @@
+@import "libs/bootstrap-4.3.1/scss/bootstrap.scss";
+@import "libs/bootstrap-4.3.1/scss/theme";
+
+html {
+  scroll-behavior: smooth;
+}
+
+.stroke-text {
+  text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.corners {
+  --notchSize: 50px;
+
+  clip-path:
+    polygon(0% var(--notchSize),
+      var(--notchSize) 0%,
+      calc(100% - var(--notchSize)) 0%,
+      100% var(--notchSize),
+      100% calc(100% - var(--notchSize)),
+      calc(100% - var(--notchSize)) 100%,
+      var(--notchSize) 100%,
+      0% calc(100% - var(--notchSize)));
+}
+.pad-0{
+  padding: 0;
+}
+.header {
+  text-align: center;
+  color: white;
+  position: relative;
+  height: 100vh;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-image: url('/img/head.jpg');
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: cover;
+    filter: blur(2px);
+    opacity: 0.4;  
+    z-index: -1; 
+    
+  }
+
+  .btn {
+    max-width: 200px;
+    margin: 0 auto;
+  }
+
+  .intro-text {
+    padding-top: 150px;
+    padding-bottom: 100px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+
+    .intro-lead-in {
+      font-size: 22px;
+      font-style: italic;
+      line-height: 22px;
+      margin-bottom: 25px;
+
+    }
+
+    .intro-heading {
+      font-size: 50px;
+      font-weight: 700;
+      line-height: 50px;
+      margin-bottom: 25px;
+
+    }
+  }
+}
+
+@media(min-width:768px) {
+  .header {
+    .intro-text {
+      padding-top: 300px;
+      padding-bottom: 200px;
+
+      .intro-lead-in {
+        font-size: 40px;
+        font-style: italic;
+        line-height: 40px;
+        margin-bottom: 25px;
+      }
+
+      .intro-heading {
+        font-size: 75px;
+        font-weight: 700;
+        line-height: 75px;
+        margin-bottom: 50px;
+      }
+    }
+  }
+}
+
+.section {
+  padding: 70px 0;
+
+  &-heading {}
+
+  &-subheading {
+    font-size: 16px;
+    font-weight: 400;
+    font-style: italic;
+    margin-bottom: 75px;
+    text-transform: none;
+  }
+}
+
+.serviceH {
+  margin-top: 50px;
+}
+
+.team {
+  &-member {
+    text-align: center;
+    padding: 30px 0;
+
+    figure {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 20px;
+
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: $primary;
+        transform: scale(0.8) skewX(15deg);
+        z-index: -1;
+      }
+    }
+
+    img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+
+
+
+
+    }
+  }
+}
+
+.contact{
+  position: relative;
+  
+  textarea{
+    height: 146px;
+  }
+  [type="submit"]{
+    padding: 10px 30px;
+    margin-top: 30px;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-image: url(/img/pattern.png) ;
+    filter: invert(1);
+    opacity: 0.1;
+    background-size: 100px;
+    background-position-y: -30px;
+    
+  }
+}
+
+.footer {
+  padding: 25px 0;
+  text-align: center;
+  background-color: $secondary;
+  .copyright{
+    padding-bottom: 20px;
+  }
+}
+
+.social-buttons {
+  a {
+    font-size: 20px;
+    line-height: 50px;
+    display: block;
+    width: 50px;
+    height: 50px;
+    transition: all .3s;
+    color:
+    $light;
+    border-radius: 100%;
+    outline: 0;
+    background-color: $dark;
+      &:hover{
+        color: $secondary;
+        background-color: $primary;
+        transition: all .3s;
+      }
+  }
+}
